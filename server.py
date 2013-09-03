@@ -42,7 +42,8 @@ class stop:
         print "["+browser_name+"]"
         if browser_name == "ie":
             browser_name = "iexplore"
-        os.system("taskkill /F /IM "+browser_name+".exe")
+        if browser_name in ["iexplore", "safari", "chrome", "firefox"]:
+            os.system("taskkill /F /IM "+browser_name+".exe")
         return "Stop request for "+browser_name+"!"
 
 class cleanup:
