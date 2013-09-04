@@ -1,6 +1,6 @@
 REM  IE
-del /f /s /q /a:h "C:\server\temp\ie\*.*"
-del /f /s /q "C:\server\temp\ie\*.*"
+del /f /s /q /a:h "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\Caches\*.*" "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\History\*.*" "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\Temporary Internet Files\*.*" 
+del /f /s /q "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\Caches\*.*" "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\History\*.*" "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\Temporary Internet Files\*.*" 
 xcopy /s /e /y /i /h /r "C:\server\temp\ie\Caches" "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\Caches"  
 xcopy /s /e /y /i /h /r "C:\server\temp\ie\History" "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\History"  
 xcopy /s /e /y /i /h /r "C:\server\temp\ie\Temporary Internet Files" "C:\Users\Browserstack\AppData\Local\Microsoft\Windows\Temporary Internet Files" 

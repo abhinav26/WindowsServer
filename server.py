@@ -28,15 +28,15 @@ class start:
             ie = webbrowser.get('c:\\program files (x86)\\internet explorer\\iexplore.exe')
             ie.open('http://google.com')
         elif browser_name == "chrome":
-            chrome_path = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
+            chrome_path = 'runas /user:Administrator C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' #runas /user:Browserstack@WIN-RGIQAL6PU4N 
             os.system("start \"\" \""+chrome_path+"\" "+url)
         elif browser_name == "firefox":
-            firefox_path = 'C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe'
+            firefox_path = 'runas /user:Administrator C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe'
             os.system("start \"\" \""+firefox_path+"\" "+url)
         elif browser_name == "safari":
             safari_path = 'C:\\Program Files (x86)\\Safari\\safari.exe'
             os.system("start \"\" \""+safari_path+"\" "+url)
-        return "Start request for "+browser_name+"!!"
+        return "Start request for "+browser_name+"!!"+proxy+" "+url+" "+ browser_name
 
 class stop:
     def GET(self):
