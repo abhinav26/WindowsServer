@@ -16,10 +16,13 @@ class index:
 
 class start:
     def GET(self):
-        request = web.input(browser = 'no browser')
-        browser_name = web.websafe(request.browser)
-        request = web.input(url = 'http://google.com')  
+        request = web.input(browser = 'no browser', url = 'http://google.com', proxy = 'false')
+        browser_name = web.websafe(request.browser) 
         url = web.websafe(request.url)
+        proxy = web.websafe(request.proxy)
+
+        if proxy == "true" :
+            os.system("C:\\server\\proxy_enable.bat")
 
         if browser_name == "ie":
             ie = webbrowser.get('c:\\program files (x86)\\internet explorer\\iexplore.exe')
@@ -40,6 +43,7 @@ class stop:
         request = web.input(browser = 'no browser')
         browser_name = web.websafe(request.browser)
         print "["+browser_name+"]"
+
         if browser_name == "ie":
             browser_name = "iexplore"
         if browser_name in ["iexplore", "safari", "chrome", "firefox"]:
@@ -49,8 +53,8 @@ class stop:
 class cleanup:
     def GET(self):
         os.system("C:\\server\\cleanup.bat")
+        os.system("C:\\server\\proxy_disable.bat")
         return "Cleanup Request!"
-
 
 if __name__ == "__main__":
     app = web.application(urls, globals())
