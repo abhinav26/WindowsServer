@@ -25,8 +25,8 @@ class start:
             os.system("C:\\server\\proxy_enable.bat")
 
         if browser_name == "ie":
-            ie = webbrowser.get('c:\\program files (x86)\\internet explorer\\iexplore.exe')
-            ie.open('http://google.com')
+            ie_path = 'C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe'
+            os.system("start \"\" \""+ie_path+"\" "+url)
         elif browser_name == "chrome":
             chrome_path = 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe' #runas /user:Browserstack@WIN-RGIQAL6PU4N 
             os.system("start \"\" \""+chrome_path+"\" "+url)
@@ -36,7 +36,7 @@ class start:
         elif browser_name == "safari":
             safari_path = 'C:\\Program Files (x86)\\Safari\\safari.exe'
             os.system("start \"\" \""+safari_path+"\" "+url)
-        return "Start request for "+browser_name+"!!"+proxy+" "+url+" "+ browser_name
+        return "Start request for "+browser_name+"!!"
 
 class stop:
     def GET(self):

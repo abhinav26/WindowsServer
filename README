@@ -24,5 +24,19 @@ Similarly, '/stop' can also be sent with browser parameter.
 '/cleanup' request to be sent for cleanup of browsers. ensure the above 4 browsers are closed. 
 server.py uses cleanup.bat to clean the new temp files created.
 
+PROXY : use 
+python proxyserver.py 9000
+to run proxy at 9000
+
+pass proxy=true to set proxy true in start request to use proxy. Cleanup disables the proxy as well.
+
+
+To run server as BACKGROUND SERVICE, use command:
+
+wscript.exe "C:\server\invisible.vbs" "C:\server\always_running_server.bat"
+
+server.py, invisible.vbs and always_running_server.bat should be stored in C:\server\
+
+This runs the server at port 8111(this can be changed in always_running_server.bat file)
 
 
