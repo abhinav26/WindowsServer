@@ -1,6 +1,6 @@
-Server made in Web.py
+>Server made in Web.py
 
-Requirements to run : python, web.py easy_install(to install web.py)
+*Requirements to run : python, web.py easy_install(to install web.py)
 "server" folder in C drive which has :
 	"temp" folder wih four subfolders for ie, safari, firefox, chrome 
 This can be done by running the initialize.bat file. These have the default profile(history, passwords, etc) for the browsers after cleanup.
